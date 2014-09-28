@@ -1,4 +1,4 @@
-package com.haiyue.model;
+package com.haiyue.pojo;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -21,13 +21,14 @@ import org.hibernate.annotations.DynamicUpdate;
  * Tresource entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "TRESOURCE")
+@Table(name = "tresource")
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class Tresource implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = 10656351L;
+	
 	private String id;
 	private Tresource tresource;
 	private String text;
@@ -61,7 +62,7 @@ public class Tresource implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@Column(name = "ID", nullable = false, length = 36)
+	@Column(name = "id", nullable = false, length = 36)
 	public String getId() {
 		return this.id;
 	}
@@ -71,7 +72,7 @@ public class Tresource implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PID")
+	@JoinColumn(name = "pid")
 	public Tresource getTresource() {
 		return this.tresource;
 	}
@@ -80,7 +81,7 @@ public class Tresource implements java.io.Serializable {
 		this.tresource = tresource;
 	}
 
-	@Column(name = "TEXT", nullable = false, length = 100)
+	@Column(name = "text", nullable = false, length = 100)
 	public String getText() {
 		return this.text;
 	}
@@ -89,7 +90,7 @@ public class Tresource implements java.io.Serializable {
 		this.text = text;
 	}
 
-	@Column(name = "URL", length = 200)
+	@Column(name = "url", length = 200)
 	public String getUrl() {
 		return this.url;
 	}
@@ -98,7 +99,7 @@ public class Tresource implements java.io.Serializable {
 		this.url = url;
 	}
 
-	@Column(name = "SEQ", precision = 22, scale = 0)
+	@Column(name = "seq", precision = 22, scale = 0)
 	public BigDecimal getSeq() {
 		return this.seq;
 	}

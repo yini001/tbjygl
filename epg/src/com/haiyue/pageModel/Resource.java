@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 public class Resource implements java.io.Serializable {
 
+	
+	private static final long serialVersionUID = 10656345L;
+	
 	private String pid;
 	private String pname;
 

@@ -2,6 +2,11 @@ package com.haiyue.pageModel;
 
 public class Role implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 10656347L;
+	
 	private int page;
 	private int rows;
 	private String sort;

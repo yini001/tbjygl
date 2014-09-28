@@ -13,14 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.haiyue.dao.BaseDaoI;
-import com.haiyue.model.Tmenu;
 import com.haiyue.pageModel.Menu;
+import com.haiyue.pojo.Tmenu;
 import com.haiyue.service.MenuServiceI;
 
 
 @Service("menuService")
 public class MenuServiceImpl implements MenuServiceI {
 
+	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(MenuServiceImpl.class);
 
 	private BaseDaoI<Tmenu> menuDao;

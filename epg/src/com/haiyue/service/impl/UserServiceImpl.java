@@ -14,12 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.haiyue.dao.BaseDaoI;
-import com.haiyue.model.Trole;
-import com.haiyue.model.TroleTresource;
-import com.haiyue.model.Tuser;
-import com.haiyue.model.TuserTrole;
 import com.haiyue.pageModel.DataGrid;
 import com.haiyue.pageModel.User;
+import com.haiyue.pojo.Trole;
+import com.haiyue.pojo.TroleTresource;
+import com.haiyue.pojo.Tuser;
+import com.haiyue.pojo.TuserTrole;
 import com.haiyue.service.UserServiceI;
 
 
@@ -27,6 +27,7 @@ import com.haiyue.service.UserServiceI;
 @Service("userService")
 public class UserServiceImpl implements UserServiceI {
 
+	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
 
 	private BaseDaoI<Tuser> userDao;
@@ -94,7 +95,6 @@ public class UserServiceImpl implements UserServiceI {
 			user.setRoleIds(roleIds);
 		}
 		BeanUtils.copyProperties(t, user);
-		System.out.println(user);
 		return user;
 	}
 

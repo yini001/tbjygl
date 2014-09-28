@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.haiyue.dao.BaseDaoI;
-import com.haiyue.model.Tresource;
-import com.haiyue.model.Trole;
-import com.haiyue.model.TroleTresource;
 import com.haiyue.pageModel.DataGrid;
 import com.haiyue.pageModel.Role;
+import com.haiyue.pojo.Tresource;
+import com.haiyue.pojo.Trole;
+import com.haiyue.pojo.TroleTresource;
 import com.haiyue.service.RoleServiceI;
 
 

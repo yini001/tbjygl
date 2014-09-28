@@ -35,12 +35,14 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 		return this.getCurrentSession().save(o);
 	}
 
+	@SuppressWarnings("unchecked")
 	public T get(Class<T> c, Serializable id) {
 		return (T) this.getCurrentSession().get(c, id);
 	}
 
 	public T get(String hql) {
 		Query q = this.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
 		List<T> l = q.list();
 		if (l != null && l.size() > 0) {
 			return l.get(0);
@@ -55,6 +57,7 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 				q.setParameter(key, params.get(key));
 			}
 		}
+		@SuppressWarnings("unchecked")
 		List<T> l = q.list();
 		if (l != null && l.size() > 0) {
 			return l.get(0);
@@ -74,11 +77,13 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 		this.getCurrentSession().saveOrUpdate(o);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<T> find(String hql) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		return q.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<T> find(String hql, Map<String, Object> params) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (params != null && !params.isEmpty()) {
@@ -89,6 +94,7 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 		return q.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<T> find(String hql, Map<String, Object> params, int page, int rows) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (params != null && !params.isEmpty()) {
@@ -99,6 +105,7 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 		return q.setFirstResult((page - 1) * rows).setMaxResults(rows).list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<T> find(String hql, int page, int rows) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		return q.setFirstResult((page - 1) * rows).setMaxResults(rows).list();

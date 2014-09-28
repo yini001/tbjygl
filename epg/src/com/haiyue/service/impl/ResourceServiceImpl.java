@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.haiyue.dao.BaseDaoI;
-import com.haiyue.model.Tresource;
-import com.haiyue.model.TroleTresource;
 import com.haiyue.pageModel.Resource;
+import com.haiyue.pojo.Tresource;
+import com.haiyue.pojo.TroleTresource;
 import com.haiyue.service.ResourceServiceI;
 
 

@@ -1,4 +1,4 @@
-package com.haiyue.model;
+package com.haiyue.pojo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,13 +15,14 @@ import org.hibernate.annotations.DynamicUpdate;
  * TroleTresource entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "TROLE_TRESOURCE")
+@Table(name = "trole_tresource")
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class TroleTresource implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = 10656353L;
+	
 	private String id;
 	private Trole trole;
 	private Tresource tresource;
@@ -41,7 +42,7 @@ public class TroleTresource implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@Column(name = "ID", nullable = false, length = 36)
+	@Column(name = "id", nullable = false, length = 36)
 	public String getId() {
 		return this.id;
 	}
@@ -51,7 +52,7 @@ public class TroleTresource implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ROLE_ID", nullable = false)
+	@JoinColumn(name = "role_id", nullable = false)
 	public Trole getTrole() {
 		return this.trole;
 	}
@@ -61,7 +62,7 @@ public class TroleTresource implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "RESOURCE_ID", nullable = false)
+	@JoinColumn(name = "resource_id", nullable = false)
 	public Tresource getTresource() {
 		return this.tresource;
 	}

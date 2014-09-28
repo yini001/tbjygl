@@ -1,4 +1,4 @@
-package com.haiyue.model;
+package com.haiyue.pojo;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,13 +18,14 @@ import org.hibernate.annotations.DynamicUpdate;
  * Trole entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "TROLE")
+@Table(name = "trole")
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class Trole implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = 10656352L;
+	
 	private String id;
 	private String text;
 	private Set<TuserTrole> tuserTroles = new HashSet<TuserTrole>(0);
@@ -52,7 +53,7 @@ public class Trole implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@Column(name = "ID", nullable = false, length = 36)
+	@Column(name = "id", nullable = false, length = 36)
 	public String getId() {
 		return this.id;
 	}
@@ -61,7 +62,7 @@ public class Trole implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "TEXT", nullable = false, length = 100)
+	@Column(name = "text", nullable = false, length = 100)
 	public String getText() {
 		return this.text;
 	}

@@ -13,6 +13,9 @@ import com.haiyue.util.JsonDateSerializer;
  */
 public class User implements java.io.Serializable {
 
+	
+	private static final long serialVersionUID = 10656349L;
+	
 	private int page;
 	private int rows;
 	private String sort;

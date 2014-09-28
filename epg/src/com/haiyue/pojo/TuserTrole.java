@@ -1,4 +1,4 @@
-package com.haiyue.model;
+package com.haiyue.pojo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,16 +12,16 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 /**
- * TuserTrole entity. @author MyEclipse Persistence Tools
+ * TuserTrole entity. 
  */
 @Entity
-@Table(name = "TUSER_TROLE")
+@Table(name = "tuser_trole")
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class TuserTrole implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = 10656355L;
 	private String id;
 	private Tuser tuser;
 	private Trole trole;
@@ -41,7 +41,7 @@ public class TuserTrole implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@Column(name = "ID", nullable = false, length = 36)
+	@Column(name = "id", nullable = false, length = 36)
 	public String getId() {
 		return this.id;
 	}
@@ -51,7 +51,7 @@ public class TuserTrole implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "USER_ID", nullable = false)
+	@JoinColumn(name = "user_id", nullable = false)
 	public Tuser getTuser() {
 		return this.tuser;
 	}
@@ -61,7 +61,7 @@ public class TuserTrole implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ROLE_ID", nullable = false)
+	@JoinColumn(name = "role_id", nullable = false)
 	public Trole getTrole() {
 		return this.trole;
 	}

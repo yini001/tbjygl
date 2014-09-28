@@ -10,7 +10,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.haiyue.pageModel.SessionInfo;
-import com.haiyue.util.ResourceUtil;
 
 
 public class SessionInterceptor implements HandlerInterceptor {

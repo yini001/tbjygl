@@ -6,6 +6,7 @@ import java.util.List;
 public class DataGrid {
 
 	private Long total = 0l;
+	@SuppressWarnings("rawtypes")
 	private List rows = new ArrayList();
 
 	public Long getTotal() {
@@ -16,11 +17,12 @@ public class DataGrid {
 		this.total = total;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List getRows() {
 		return rows;
 	}
 
-	public void setRows(List rows) {
+	public void setRows(@SuppressWarnings("rawtypes") List rows) {
 		this.rows = rows;
 	}
 

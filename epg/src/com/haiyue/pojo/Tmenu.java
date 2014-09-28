@@ -1,4 +1,4 @@
-package com.haiyue.model;
+package com.haiyue.pojo;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -21,13 +21,16 @@ import org.hibernate.annotations.DynamicUpdate;
  * Tmenu entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "TMENU", schema = "")
+@Table(name = "tmenu", schema = "")
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class Tmenu implements java.io.Serializable {
 
 	// Fields
 
+	
+	private static final long serialVersionUID = 10656350L;
+	
 	private String id;
 	private String text;
 	private String url;
@@ -62,7 +65,7 @@ public class Tmenu implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@Column(name = "ID", nullable = false, length = 36)
+	@Column(name = "id", nullable = false, length = 36)
 	public String getId() {
 		return this.id;
 	}
@@ -72,7 +75,7 @@ public class Tmenu implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PID")
+	@JoinColumn(name = "pid")
 	public Tmenu getTmenu() {
 		return this.tmenu;
 	}
@@ -81,7 +84,7 @@ public class Tmenu implements java.io.Serializable {
 		this.tmenu = tmenu;
 	}
 
-	@Column(name = "TEXT", nullable = false, length = 100)
+	@Column(name = "text", nullable = false, length = 100)
 	public String getText() {
 		return this.text;
 	}
@@ -90,7 +93,7 @@ public class Tmenu implements java.io.Serializable {
 		this.text = text;
 	}
 
-	@Column(name = "URL", length = 200)
+	@Column(name = "url", length = 200)
 	public String getUrl() {
 		return this.url;
 	}
@@ -99,7 +102,7 @@ public class Tmenu implements java.io.Serializable {
 		this.url = url;
 	}
 
-	@Column(name = "ICONCLS", length = 50)
+	@Column(name = "iconcls", length = 50)
 	public String getIconcls() {
 		return this.iconcls;
 	}
@@ -108,7 +111,7 @@ public class Tmenu implements java.io.Serializable {
 		this.iconcls = iconcls;
 	}
 
-	@Column(name = "SEQ", precision = 22, scale = 0)
+	@Column(name = "seq", precision = 22, scale = 0)
 	public BigDecimal getSeq() {
 		return this.seq;
 	}

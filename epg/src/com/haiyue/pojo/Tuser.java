@@ -1,4 +1,4 @@
-package com.haiyue.model;
+package com.haiyue.pojo;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -18,21 +18,24 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 /**
- * Tuser entity. @author MyEclipse Persistence Tools
+ * Tuser entity. 
  */
 @Entity
-@Table(name = "TUSER")
+@Table(name = "t_user")
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class Tuser implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = 10656354L;
 	private String id;
 	private String name;
 	private String pwd;
 	private Date createdatetime;
 	private Date modifydatetime;
+	private String tel;
+	private Boolean status; //帐号是否启用
+	
 	//用户角色
 	private Set<TuserTrole> tuserTroles = new HashSet<TuserTrole>(0);
 
@@ -61,7 +64,7 @@ public class Tuser implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@Column(name = "ID", nullable = false, length = 36)
+	@Column(name = "id", nullable = false, length = 36)
 	public String getId() {
 		return this.id;
 	}
@@ -70,7 +73,7 @@ public class Tuser implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "NAME", unique = true, nullable = false, length = 100)
+	@Column(name = "name", unique = true, nullable = false, length = 100)
 	public String getName() {
 		return this.name;
 	}
@@ -79,7 +82,7 @@ public class Tuser implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "PWD", nullable = false, length = 50)
+	@Column(name = "password", nullable = false, length = 50)
 	public String getPwd() {
 		return this.pwd;
 	}
@@ -89,7 +92,7 @@ public class Tuser implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATEDATETIME", length = 7)
+	@Column(name = "careate_time", length = 19)
 	public Date getCreatedatetime() {
 		return this.createdatetime;
 	}
@@ -99,7 +102,7 @@ public class Tuser implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "MODIFYDATETIME", length = 7)
+	@Column(name = "modify_time", length = 19)
 	public Date getModifydatetime() {
 		return this.modifydatetime;
 	}
@@ -116,5 +119,26 @@ public class Tuser implements java.io.Serializable {
 	public void setTuserTroles(Set<TuserTrole> tuserTroles) {
 		this.tuserTroles = tuserTroles;
 	}
+	
+	@Column(name = "tel", length = 15)
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	
+	@Column(name = "status", length = 4)
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+	
+	
+	
 
 }

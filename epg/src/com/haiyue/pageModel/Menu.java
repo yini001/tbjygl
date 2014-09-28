@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Menu implements java.io.Serializable {
+	
+	private static final long serialVersionUID = 10656346L;
+	
 	private String pid;
 	private String pname;
 	private String state = "open";

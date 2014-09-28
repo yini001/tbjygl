@@ -8,6 +8,9 @@ import java.util.List;
  */
 public class SessionInfo implements java.io.Serializable {
 
+	
+	private static final long serialVersionUID = 10656348L;
+	
 	private String userId;
 	private String loginName;
 	private String pwd;
