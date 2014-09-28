@@ -30,8 +30,8 @@ public class UserServiceImpl implements UserServiceI {
 	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
 
-	private BaseDaoI<Tuser> userDao;
-	private BaseDaoI<Trole> roleDao;
+	private BaseDaoI<User> userDao;
+	private BaseDaoI<Role> roleDao;
 	private BaseDaoI<TuserTrole> userRoleDao;
 
 	public BaseDaoI<TuserTrole> getUserRoleDao() {

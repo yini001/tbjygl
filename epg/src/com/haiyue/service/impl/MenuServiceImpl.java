@@ -24,29 +24,29 @@ public class MenuServiceImpl implements MenuServiceI {
 	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(MenuServiceImpl.class);
 
-	private BaseDaoI<Tmenu> menuDao;
+	private BaseDaoI<Menu> menuDao;
 
-	public BaseDaoI<Tmenu> getMenuDao() {
+	public BaseDaoI<Menu> getMenuDao() {
 		return menuDao;
 	}
 
 	@Autowired
-	public void setMenuDao(BaseDaoI<Tmenu> menuDao) {
+	public void setMenuDao(BaseDaoI<Menu> menuDao) {
 		this.menuDao = menuDao;
 	}
 
 	public List<Menu> allTreeNode() {
 		List<Menu> nl = new ArrayList<Menu>();
 		String hql = "from Tmenu t order by t.seq";
-		List<Tmenu> l = menuDao.find(hql);
+		List<Menu> l = menuDao.find(hql);
 		if (l != null && l.size() > 0) {
-			for (Tmenu t : l) {
+			for (Menu t : l) {
 				Menu m = new Menu();
 				BeanUtils.copyProperties(t, m);
 				Map<String, Object> attributes = new HashMap<String, Object>();
 				attributes.put("url", t.getUrl());
 				m.setAttributes(attributes);
-				Tmenu tm = t.getTmenu();// 获得当前节点的父节点对象
+				Menu tm = t.getTmenu();// 获得当前节点的父节点对象
 				if (tm != null) {
 					m.setPid(tm.getId());
 				}
