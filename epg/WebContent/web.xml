@@ -9,7 +9,7 @@
   
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring.xml,classpath:spring-hibernate.xml</param-value>
+		<param-value>classpath:spring.xml</param-value>
 	</context-param>
 	<!-- 添加字符处理，解决请求到Conrtroller中文编码-->
 	<filter>
